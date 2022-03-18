@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.titles {
+  margin-top: 4rem;
+  text-align: center;
+  color: #fcf2f2;
+  font-family: "Nunito", sans-serif;
+}
+
+.contacto-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  width: 100%;
+  height: 30rem;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.contacto-title {
+  color: #fcf2f2;
+  display: flex;
+  align-self: center;
+  margin: 5px;
+  padding: 10px;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+header nav div .titulo {
+  color: #fcf2f2;
+}
+header nav div .nav {
+  justify-content: flex-end;
+}
+
+.main__title,
+.aside__title {
+  @extends .titles;
+}
+
+.card {
+  box-shadow: 0 0.5rem 1rem #f5f4f4b0;
+}
+.card .card__list {
+  padding: 0;
+}
+
+.aside__container {
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 768px) {
+  .aside__container {
+    justify-content: center;
+  }
+  .aside__container .aside__card {
+    margin: 3rem;
+  }
+}
+.footer__item {
+  color: #fcf2f2;
+}
+
+.producto_texto {
+  font-size: 0.7rem;
+}
+
+.vacio {
+  height: 50vh;
+}
+
+.btn-shadow {
+  margin-left: 0.3rem;
+  margin-bottom: 1rem;
+}
+.btn-shadow:hover {
+  box-shadow: 0 0.2rem 0.5rem #f5f4f4b0;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTACTO */
+.contacto {
+  display: grid;
+  color: #ffffff;
+  grid-template-areas: "form contacto ubicacion";
+}
+.contacto .form__container {
+  grid-area: form;
+  @extends .contacto-container;
+}
+.contacto .form__container .form__title {
+  @extends .contacto-title;
+}
+.contacto .form__container form {
+  align-self: center;
+  margin: 0;
+  width: 350px;
+  padding: 1em;
+  background-color: inherit;
+  border: 2px solid #faf7f6;
+  border-radius: 1em;
+  box-shadow: 0 0.2rem 0.5rem #f5f4f4b0;
+}
+.contacto .form__container form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.contacto .form__container form ul li {
+  margin-top: 1em;
+  margin-left: 2em;
+}
+.contacto .form__container form ul li label {
+  display: inline-block;
+}
+.contacto .form__container form ul li input {
+  font-size: 1em;
+}
+.contacto .form__container form ul li input[type=checkbox] {
+  margin-right: 5px;
+}
+.contacto .form__container form ul li .form__btn {
+  font-size: 1.2em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #ffc107;
+  color: #020202fb;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.16), 1px 5px 15px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+.contacto .contacto__info {
+  grid-area: contacto;
+  @extends .contacto-container;
+}
+.contacto .contacto__info .contacto__info--title {
+  @extends .contacto-title;
+}
+.contacto .contacto__info .contacto__info--p {
+  color: #fcf2f2;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+.contacto .ubicacion {
+  grid-area: ubicacion;
+  @extends .contacto-container;
+}
+.contacto .ubicacion .ubicacion__title {
+  @extends .contacto-title;
+}
+.contacto .ubicacion .maps {
+  margin: 0 auto;
+  max-width: 26rem;
+  max-height: 20rem;
+}
+.contacto .ubicacion .maps iframe {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .contacto {
+    grid-template-areas: "form" "contacto" "ubicacion";
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+  .contacto .contacto__info {
+    margin-left: 1rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .contacto {
+    grid-template-areas: "form contacto" "ubicacion .";
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+  .contacto .contacto__info {
+    margin-left: 1rem;
+  }
+}
+.nos .nosotros {
+  max-width: 25%;
+  border-radius: 50%;
+}
+.nos p {
+  color: #fcf2f2;
+}
+.nos .nos__animated {
+  font-family: "Montserrat";
+  text-align: center;
+  color: #FFF;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+.nos .nos__animated h1 {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 0.75;
+  margin: 10px 0;
+}

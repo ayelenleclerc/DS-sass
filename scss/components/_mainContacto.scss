@@ -1,0 +1,128 @@
+
+/* CONTACTO */
+.contacto {
+    display: grid;
+    color: #ffffff;
+    grid-template-areas: "form contacto ubicacion";
+
+    .form__container {
+    grid-area: form;
+    @extends .contacto-container;
+
+        .form__title {
+            @extends .contacto-title
+        }
+
+        form {
+            align-self: center;
+            margin: 0;
+            width: 350px;
+            padding: 1em;
+            background-color: inherit;
+            border: 2px solid #faf7f6;
+            border-radius: 1em;
+            box-shadow: $shadow-cat;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    margin-top: 1em;
+                    margin-left: 2em;
+                    
+                    label {
+                        display: inline-block;
+                    }
+
+                    input {
+                        font-size: 1em;
+                        &[type="checkbox"] {
+                            margin-right: 5px;
+                        }
+                    }
+
+                    .form__btn {
+                        font-size: 1.2em;
+                        padding: 0.5em;
+                        border-radius: 5px;
+                        border-style: none;
+                        background-color: rgb(255, 193, 7);
+                        color: #020202fb;
+                        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.16),
+                            1px 5px 15px rgba(0, 0, 0, 0.12);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .contacto__info {
+        grid-area: contacto;
+        @extends .contacto-container;
+
+
+        .contacto__info--title {
+             @extends .contacto-title;
+        }
+
+        .contacto__info--p {
+            color: $color_primary;
+            font-size: 1.2em;
+            line-height: 1.5em;
+        }
+    }
+
+    .ubicacion {
+        grid-area: ubicacion;
+        @extends .contacto-container;
+
+        .ubicacion__title {
+           @extends .contacto-title;
+        }
+
+        .maps {
+            margin: 0 auto;
+            max-width: 26rem;
+            max-height: 20rem;
+
+             iframe {
+                width: 100%;
+              }
+        }
+    }
+}
+
+@media screen and (max-width:$md) {
+    .contacto {
+        grid-template-areas: "form"
+            "contacto"
+            "ubicacion";
+        gap: 0.5rem;
+        margin-left:1rem;
+        
+         .contacto__info{
+            margin-left:1rem;
+        }
+
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .contacto {
+        grid-template-areas: 
+        "form contacto"
+        "ubicacion .";
+        gap: 0.5rem;
+        margin-left:1rem;
+
+        .contacto__info{
+            margin-left:1rem;
+        }
+
+    }
+
+}
+

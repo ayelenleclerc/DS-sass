@@ -1,0 +1,27 @@
+
+.main__title,
+.aside__title {
+   @extends .titles;
+
+}
+
+.card {
+    box-shadow: $shadow;
+    .card__list {
+        padding: 0;
+    }
+}
+
+.aside__container {
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width:$md) {
+    .aside__container {
+        justify-content: center;
+
+        .aside__card {
+        margin: 3rem;
+        }
+    }
+}

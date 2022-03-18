@@ -1,0 +1,22 @@
+
+ .producto_texto {
+     font-size: 0.7rem;
+ }
+
+ .vacio {
+     height: 50vh;
+ }
+
+ .btn-shadow {
+     margin-left: 0.3rem;
+     margin-bottom: 1rem;
+
+        &:hover {
+        box-shadow: $shadow-cat;
+     }
+}
+
+ .card__img {
+     width: 100%;
+     height: 100%;
+ }
