@@ -12,14 +12,7 @@ ul {
   list-style: none;
 }
 
-.titles {
-  margin-top: 4rem;
-  text-align: center;
-  color: #fcf2f2;
-  font-family: "Nunito", sans-serif;
-}
-
-.contacto-container {
+.contacto-container, .contacto .ubicacion, .contacto .contacto__info, .contacto .form__container {
   display: flex;
   flex-direction: column;
   min-width: 15rem;
@@ -29,7 +22,7 @@ ul {
   padding: 10px;
 }
 
-.contacto-title {
+.contacto-title, .contacto .ubicacion .ubicacion__title, .contacto .contacto__info .contacto__info--title, .contacto .form__container .form__title {
   color: #fcf2f2;
   display: flex;
   align-self: center;
@@ -37,6 +30,27 @@ ul {
   padding: 10px;
   font-size: 2em;
   font-weight: 500;
+}
+
+.boton-twitter {
+  background-color: #55acee;
+  border: 0;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.boton-gmail {
+  background-color: #f12a51;
+  border: 0;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.boton-instagram {
+  background-color: #c92d8f;
+  border: 0;
+  padding: 15px;
+  border-radius: 50%;
 }
 
 header nav div .titulo {
@@ -48,7 +62,10 @@ header nav div .nav {
 
 .main__title,
 .aside__title {
-  @extends .titles;
+  margin-top: 4rem;
+  text-align: center;
+  color: #fcf2f2;
+  font-family: "Nunito", sans-serif;
 }
 
 .card {
@@ -66,10 +83,15 @@ header nav div .nav {
   .aside__container {
     justify-content: center;
   }
-  .aside__container .aside__card {
+  .aside__container__card {
     margin: 3rem;
   }
 }
+h5 {
+  color: #fcf2f2;
+  font-size: 1.25rem;
+}
+
 .footer__item {
   color: #fcf2f2;
 }
@@ -79,7 +101,7 @@ header nav div .nav {
 }
 
 .vacio {
-  height: 25vh;
+  height: 15vh;
 }
 
 .btn-shadow {
@@ -99,14 +121,10 @@ header nav div .nav {
 .contacto {
   display: grid;
   color: #ffffff;
-  grid-template-areas: "form contacto ubicacion";
+  grid-template-areas: "form contacto ubicacion " "form contacto redes";
 }
 .contacto .form__container {
   grid-area: form;
-  @extends .contacto-container;
-}
-.contacto .form__container .form__title {
-  @extends .contacto-title;
 }
 .contacto .form__container form {
   align-self: center;
@@ -148,10 +166,6 @@ header nav div .nav {
 }
 .contacto .contacto__info {
   grid-area: contacto;
-  @extends .contacto-container;
-}
-.contacto .contacto__info .contacto__info--title {
-  @extends .contacto-title;
 }
 .contacto .contacto__info .contacto__info--p {
   color: #fcf2f2;
@@ -160,10 +174,6 @@ header nav div .nav {
 }
 .contacto .ubicacion {
   grid-area: ubicacion;
-  @extends .contacto-container;
-}
-.contacto .ubicacion .ubicacion__title {
-  @extends .contacto-title;
 }
 .contacto .ubicacion .maps {
   margin: 0 auto;
@@ -173,10 +183,24 @@ header nav div .nav {
 .contacto .ubicacion .maps iframe {
   width: 100%;
 }
+.contacto .redes {
+  grid-area: redes;
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+}
+.contacto .redes button {
+  box-shadow: 0 0.2rem 0.5rem #f5f4f4b0;
+  text-align: center;
+}
+.contacto .redes button a {
+  text-decoration: none;
+  color: #fcf2f2;
+}
 
 @media screen and (max-width: 768px) {
   .contacto {
-    grid-template-areas: "form" "contacto" "ubicacion";
+    grid-template-areas: "form" "contacto" "ubicacion" "redes";
     gap: 0.5rem;
     margin-left: 1rem;
   }
@@ -186,12 +210,20 @@ header nav div .nav {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   .contacto {
-    grid-template-areas: "form contacto" "ubicacion .";
+    grid-template-areas: "form contacto" "ubicacion redes";
     gap: 0.5rem;
     margin-left: 1rem;
   }
   .contacto .contacto__info {
     margin-left: 1rem;
+  }
+  .contacto .redes {
+    margin-left: 1rem;
+    align-items: center;
+  }
+  .contacto .redes button {
+    height: max-content;
+    margin: 0 auto;
   }
 }
 .nos .nosotros {

@@ -1,7 +1,7 @@
 
 .main__title,
 .aside__title {
-   @extends .titles;
+   @include titles;
 
 }
 
@@ -20,7 +20,7 @@
     .aside__container {
         justify-content: center;
 
-        .aside__card {
+        &__card {
         margin: 3rem;
         }
     }

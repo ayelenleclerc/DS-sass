@@ -3,14 +3,15 @@
 .contacto {
     display: grid;
     color: #ffffff;
-    grid-template-areas: "form contacto ubicacion";
+    grid-template-areas: "form contacto ubicacion "
+    "form contacto redes";
 
     .form__container {
     grid-area: form;
-    @extends .contacto-container;
+    @extend .contacto-container;
 
         .form__title {
-            @extends .contacto-title
+            @extend .contacto-title
         }
 
         form {
@@ -61,11 +62,11 @@
 
     .contacto__info {
         grid-area: contacto;
-        @extends .contacto-container;
+        @extend .contacto-container;
 
 
         .contacto__info--title {
-             @extends .contacto-title;
+             @extend .contacto-title;
         }
 
         .contacto__info--p {
@@ -77,10 +78,10 @@
 
     .ubicacion {
         grid-area: ubicacion;
-        @extends .contacto-container;
+        @extend .contacto-container;
 
         .ubicacion__title {
-           @extends .contacto-title;
+           @extend .contacto-title;
         }
 
         .maps {
@@ -93,13 +94,29 @@
               }
         }
     }
+    .redes{
+        grid-area:redes;
+        display:flex;
+        max-width:100%;
+        justify-content:space-between;
+      
+        button{
+            box-shadow:$shadow-cat;
+            text-align: center;
+           a{
+               text-decoration:none;
+               color:$color_primary;
+           }
+       }
+    }
 }
 
 @media screen and (max-width:$md) {
     .contacto {
         grid-template-areas: "form"
             "contacto"
-            "ubicacion";
+            "ubicacion"
+            "redes";
         gap: 0.5rem;
         margin-left:1rem;
         
@@ -114,14 +131,23 @@
     .contacto {
         grid-template-areas: 
         "form contacto"
-        "ubicacion .";
+        "ubicacion redes";
         gap: 0.5rem;
         margin-left:1rem;
 
         .contacto__info{
             margin-left:1rem;
         }
-
+        .redes{
+            margin-left:1rem;
+            align-items: center;
+            button{
+                height:max-content;
+                margin:0 auto
+                
+            }
+            
+        }
     }
 
 }
