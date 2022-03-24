@@ -12,7 +12,7 @@ ul {
   list-style: none;
 }
 
-.contacto-container, .contacto .ubicacion, .contacto .contacto__info, .contacto .form__container {
+.contacto-container, .contacto .ubicacion, .contacto .contacto__info, .contacto .form-container {
   display: flex;
   flex-direction: column;
   min-width: 15rem;
@@ -22,7 +22,7 @@ ul {
   padding: 10px;
 }
 
-.contacto-title, .contacto .ubicacion .ubicacion__title, .contacto .contacto__info .contacto__info--title, .contacto .form__container .form__title {
+.contacto-title, .contacto .ubicacion .ubicacion__title, .contacto .contacto__info .contacto__info--title, .contacto .form-container .form__title {
   color: #fcf2f2;
   display: flex;
   align-self: center;
@@ -30,27 +30,6 @@ ul {
   padding: 10px;
   font-size: 2em;
   font-weight: 500;
-}
-
-.boton-twitter {
-  background-color: #55acee;
-  border: 0;
-  padding: 15px;
-  border-radius: 50%;
-}
-
-.boton-gmail {
-  background-color: #f12a51;
-  border: 0;
-  padding: 15px;
-  border-radius: 50%;
-}
-
-.boton-instagram {
-  background-color: #c92d8f;
-  border: 0;
-  padding: 15px;
-  border-radius: 50%;
 }
 
 header nav div .titulo {
@@ -78,7 +57,6 @@ header nav div .nav {
 .aside__container {
   justify-content: space-evenly;
 }
-
 @media screen and (max-width: 768px) {
   .aside__container {
     justify-content: center;
@@ -87,9 +65,10 @@ header nav div .nav {
     margin: 3rem;
   }
 }
-h5 {
+.h5 {
   color: #fcf2f2;
   font-size: 1.25rem;
+  margin: 0 auto;
 }
 
 .footer__item {
@@ -121,48 +100,85 @@ h5 {
 .contacto {
   display: grid;
   color: #ffffff;
-  grid-template-areas: "form contacto ubicacion " "form contacto redes";
+  grid-template-areas: "form contacto ubicacion ";
 }
-.contacto .form__container {
+.contacto .form-container {
   grid-area: form;
 }
-.contacto .form__container form {
-  align-self: center;
-  margin: 0;
-  width: 350px;
-  padding: 1em;
-  background-color: inherit;
-  border: 2px solid #faf7f6;
-  border-radius: 1em;
+.contacto .form-container .form {
+  background: inherit;
+  width: 90%;
+  height: max-content;
+  max-width: 400px;
+  border-radius: 1rem;
+  margin: auto;
+  border: 1px solid #fcf2f2;
   box-shadow: 0 0.2rem 0.5rem #f5f4f4b0;
+  padding: 1.5rem 1rem;
 }
-.contacto .form__container form ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.contacto .form-container .form .form__container {
+  width: 100%;
+  display: grid;
+  gap: 0.5rem;
+  grid-auto-columns: 95%;
 }
-.contacto .form__container form ul li {
-  margin-top: 1em;
-  margin-left: 2em;
+.contacto .form-container .form .form__container .form__input {
+  padding: 0.5em;
+  outline: none;
+  border-radius: 0.5rem;
+  border: none;
 }
-.contacto .form__container form ul li label {
+.contacto .form-container .form .form__container .form__input .opcion-radio {
   display: inline-block;
+  margin-right: 18px;
 }
-.contacto .form__container form ul li input {
-  font-size: 1em;
-}
-.contacto .form__container form ul li input[type=checkbox] {
+.contacto .form-container .form .form__container .form__input .opcion-radio input {
   margin-right: 5px;
 }
-.contacto .form__container form ul li .form__btn {
-  font-size: 1.2em;
-  padding: 0.5em;
-  border-radius: 5px;
-  border-style: none;
+.contacto .form-container .form .form__container .form__input .opcion-radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+.contacto .form-container .form .form__container .form__input .opcion-radio input[type=radio] + label:before {
+  content: "";
   background-color: #ffc107;
-  color: #020202fb;
-  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.16), 1px 5px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 100%;
+  border: 1px solid #ffc107;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  top: -0.2em;
+  margin-right: 0.5em;
+  vertical-align: top;
   cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+.contacto .form-container .form .form__container .form__input .opcion-radio input[type=radio]:checked + label:before {
+  background-color: #ffc107;
+  box-shadow: inset 0 0 0 4px #ffc107;
+}
+.contacto .form-container .form .form__container .form__input .opcion-radio label {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 32px;
+}
+.contacto .form-container .form .form__container .form__input __input--mensaje {
+  padding-bottom: 1rem;
+  resize: none;
+}
+.contacto .form-container .form .form__container .form__cta {
+  width: 100%;
+  font-size: 1.2rem;
+  outline: none;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #ffc107;
+  color: black;
 }
 .contacto .contacto__info {
   grid-area: contacto;
@@ -176,6 +192,8 @@ h5 {
   grid-area: ubicacion;
 }
 .contacto .ubicacion .maps {
+  width: 95%;
+  height: 100%;
   margin: 0 auto;
   max-width: 26rem;
   max-height: 20rem;
@@ -183,25 +201,21 @@ h5 {
 .contacto .ubicacion .maps iframe {
   width: 100%;
 }
-.contacto .redes {
-  grid-area: redes;
-  display: flex;
-  max-width: 100%;
-  justify-content: space-between;
-}
-.contacto .redes button {
-  box-shadow: 0 0.2rem 0.5rem #f5f4f4b0;
+.contacto .ubicacion .ubicacion__parrafo {
   text-align: center;
-}
-.contacto .redes button a {
-  text-decoration: none;
   color: #fcf2f2;
+  border: 1px solid #fcf2f2;
+  box-shadow: 0 0.2rem 0.5rem #ffc107;
+  font-size: 1.1rem;
+  line-height: 1.5em;
+  padding: 1.5rem;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px) {
   .contacto {
-    grid-template-areas: "form" "contacto" "ubicacion" "redes";
-    gap: 0.5rem;
+    grid-template-areas: "form" "contacto" "ubicacion";
+    gap: 1rem;
     margin-left: 1rem;
   }
   .contacto .contacto__info {
@@ -210,20 +224,13 @@ h5 {
 }
 @media (min-width: 769px) and (max-width: 1200px) {
   .contacto {
-    grid-template-areas: "form contacto" "ubicacion redes";
-    gap: 0.5rem;
+    grid-template-areas: "form" "contacto" "ubicacion ";
+    gap: 1rem;
     margin-left: 1rem;
   }
   .contacto .contacto__info {
     margin-left: 1rem;
-  }
-  .contacto .redes {
-    margin-left: 1rem;
-    align-items: center;
-  }
-  .contacto .redes button {
-    height: max-content;
-    margin: 0 auto;
+    margin-top: 2rem;
   }
 }
 .nos .nosotros {

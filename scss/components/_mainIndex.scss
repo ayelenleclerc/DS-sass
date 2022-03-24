@@ -14,6 +14,15 @@
 
 .aside__container {
     justify-content: space-evenly;
+   &__nombre{
+       $aside: map-get($aside, h5 );
+      
+   }
+   &__text{
+       $aside: map-get($aside, p);
+       
+    }   
+   
 }
 
 @media screen and (max-width:$md) {
@@ -23,5 +32,6 @@
         &__card {
         margin: 3rem;
         }
+
     }
 }
