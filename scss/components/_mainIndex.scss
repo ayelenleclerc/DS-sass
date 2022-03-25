@@ -5,13 +5,24 @@
 
 }
 
+
+     
 .card {
     box-shadow: $shadow;
     .card__list {
         padding: 0;
     }
-}
+    
 
+}
+.card--simple{
+
+    .card__title--simple{
+     @include titles;
+     font-size: 2rem;
+     color:#343a40;
+     }
+}
 .aside__container {
     justify-content: space-evenly;
    &__nombre{

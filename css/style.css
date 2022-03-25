@@ -54,6 +54,15 @@ header nav div .nav {
   padding: 0;
 }
 
+.card--simple .card__title--simple {
+  margin-top: 4rem;
+  text-align: center;
+  color: #fcf2f2;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  color: #343a40;
+}
+
 .aside__container {
   justify-content: space-evenly;
 }
@@ -239,30 +248,4 @@ header nav div .nav {
 }
 .nos p {
   color: #fcf2f2;
-}
-.nos .nos__animated {
-  font-family: "Montserrat";
-  text-align: center;
-  color: #FFF;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  letter-spacing: 1px;
-}
-.nos .nos__animated h1 {
-  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
-  background-size: cover;
-  color: transparent;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  line-height: 0.75;
-  margin: 10px 0;
 }
