@@ -5,4 +5,8 @@
 }
 .footer__item{
     color:$color_primary;
+    &:hover {
+        color:$color_primary;
+        font-weight:bold;
+    }
 }
